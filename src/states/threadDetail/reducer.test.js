@@ -89,5 +89,4 @@ describe('threadDetailReducer function', () => {
     const nextState = threadDetailReducer(initialState, action);
     expect(nextState.upVotesBy).not.toContain('user123');
   });
-
 });

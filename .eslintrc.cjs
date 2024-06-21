@@ -3,6 +3,8 @@ module.exports = {
   env: {
     browser: true,
     es2020: true,
+    node: true,
+    jest: true
   },
   extends: [
     'eslint:recommended',
@@ -10,12 +12,16 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
     'airbnb',
+    'prettier',
   ],
   ignorePatterns: [
     'dist',
     '.eslintrc.cjs',
   ],
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    },
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
@@ -28,23 +34,8 @@ module.exports = {
     'react-refresh',
   ],
   rules: {
-    'import/no-named-as-default': 'off',
-    'import/no-named-as-default-member': 'off',
-    'import/prefer-default-export': 'off',
-    'react/no-unescaped-entities': 'off',
-    'react/jsx-uses-react': 'error',
-    'react/jsx-uses-vars': 'error',
-    'no-alert': 'off',
-    'no-underscore-dangle': 'off',
-    'react/forbid-prop-types': 'off',
-    'react/jsx-no-target-blank': 'off',
-    'react-refresh/only-export-components': [
-      'warn',
-      {
-        allowConstantExport: true,
-      },
-    ],
-    // Aturan untuk menangani error 'prop-types' should be listed in the project's dependencies
+    'linebreak-style': 'off', // Menonaktifkan aturan linebreak-style
+    'max-len': 'off', // Menonaktifkan aturan max-len
     'import/no-extraneous-dependencies': [
       'error',
       {
@@ -56,6 +47,32 @@ module.exports = {
         ],
         optionalDependencies: false,
         peerDependencies: false,
+        packageDir: [
+          '.',
+          './src'
+        ],
+      },
+    ],
+    'import/no-named-as-default': 'off',
+    'import/no-named-as-default-member': 'off',
+    'import/prefer-default-export': 'off',
+    'react/no-unescaped-entities': 'off',
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
+    'no-alert': 'off',
+    'no-underscore-dangle': 'off',
+    'react/forbid-prop-types': 'off',
+    'react/jsx-no-target-blank': 'off',
+    'import/no-extraneous-dependencies': 'off', // Disable checking for extraneous dependencies
+    'quotes': ['error', 'single'], // Enforce the use of single quotes
+    'semi': ['error', 'always'], // Require semicolons at the end of statements
+    'eol-last': ['error', 'always'], // Require a newline at the end of files
+    'no-undef': 'off', // Allow using undefined variables (if you're sure they're defined globally)
+    'react/prop-types': 'off', // Disable prop-types check for React components
+    'react-refresh/only-export-components': [
+      'warn',
+      {
+        allowConstantExport: true,
       },
     ],
     // Menonaktifkan peringatan yang tidak diperlukan
