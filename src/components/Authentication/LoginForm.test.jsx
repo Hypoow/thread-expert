@@ -12,7 +12,9 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'; // For better assertions
-import { describe, it, expect, vi } from 'vitest'; // Import dari vitest
+import {
+  describe, it, expect, vi,
+} from 'vitest'; // Import dari vitest
 import LoginForm from './LoginForm';
 
 describe('LoginForm', () => {
