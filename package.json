@@ -15,7 +15,6 @@
     "cy:run-only": "cypress run",
     "cy:open": "start-server-and-test start http://localhost:5173 cy:open-only",
     "cy:open-only": "cypress open",
-    "ci:test": "vitest --no-watch && start-server-and-test dev http-get://localhost:5173 e2e",
     "e2e": "cypress open"
   },
   "dependencies": {
