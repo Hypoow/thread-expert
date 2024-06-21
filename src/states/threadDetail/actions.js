@@ -97,9 +97,9 @@ function asyncReceiveThreadDetail(threadId) {
       dispatch(receiveThreadDetailActionCreator(threadDetail));
     } catch (error) {
       alert(error.message);
+    } finally {
+      dispatch(hideLoading());
     }
-
-    dispatch(hideLoading());
   };
 }
 
@@ -116,9 +116,9 @@ function asyncCreateComment({ content }) {
       dispatch(createCommentActionCreator(comment));
     } catch (error) {
       alert(error.message);
+    } finally {
+      dispatch(hideLoading());
     }
-
-    dispatch(hideLoading());
   };
 }
 
