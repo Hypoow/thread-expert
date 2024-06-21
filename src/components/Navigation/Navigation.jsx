@@ -9,7 +9,7 @@ import './Navigation.css';
 export default function Navigation({ authUser = null, logout = () => {} }) {
   return (
     <nav className="nav-card">
-      <h1 className="nav-logo">HyooThread</h1>
+      <h1 className="nav-logo">HyooThread App</h1>
       <div className="nav-center">
         <ul className="nav-card-list">
           <li className="nav-card-item">
