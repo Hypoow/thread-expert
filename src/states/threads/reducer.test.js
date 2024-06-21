@@ -47,45 +47,56 @@ describe('threadsReducer function', () => {
 
   it('should handle UP_VOTE_THREAD action', () => {
     const initialState = [
-      { id: 1, title: 'Thread 1', upVotesBy: [], downVotesBy: [] },
-      { id: 2, title: 'Thread 2', upVotesBy: [], downVotesBy: [] },
+      {
+        id: 1, title: 'Thread 1', upVotesBy: [], downVotesBy: [],
+      },
+      {
+        id: 2, title: 'Thread 2', upVotesBy: [], downVotesBy: [],
+      },
     ];
     const action = {
       type: ActionType.UP_VOTE_THREAD,
       payload: { threadId: 1, userId: 'user123' },
     };
     const nextState = threadsReducer(initialState, action);
-    const updatedThread = nextState.find(thread => thread.id === 1);
+    const updatedThread = nextState.find((thread) => thread.id === 1);
     expect(updatedThread.upVotesBy).toContain('user123');
   });
 
   it('should handle DOWN_VOTE_THREAD action', () => {
     const initialState = [
-      { id: 1, title: 'Thread 1', upVotesBy: [], downVotesBy: [] },
-      { id: 2, title: 'Thread 2', upVotesBy: [], downVotesBy: [] },
+      {
+        id: 1, title: 'Thread 1', upVotesBy: [], downVotesBy: [],
+      },
+      {
+        id: 2, title: 'Thread 2', upVotesBy: [], downVotesBy: [],
+      },
     ];
     const action = {
       type: ActionType.DOWN_VOTE_THREAD,
       payload: { threadId: 1, userId: 'user123' },
     };
     const nextState = threadsReducer(initialState, action);
-    const updatedThread = nextState.find(thread => thread.id === 1);
+    const updatedThread = nextState.find((thread) => thread.id === 1);
     expect(updatedThread.downVotesBy).toContain('user123');
   });
 
   it('should handle NEUTRALIZE_VOTE_THREAD action', () => {
     const initialState = [
-      { id: 1, title: 'Thread 1', upVotesBy: ['user123'], downVotesBy: [] },
-      { id: 2, title: 'Thread 2', upVotesBy: [], downVotesBy: [] },
+      {
+        id: 1, title: 'Thread 1', upVotesBy: ['user123'], downVotesBy: [],
+      },
+      {
+        id: 2, title: 'Thread 2', upVotesBy: [], downVotesBy: [],
+      },
     ];
     const action = {
       type: ActionType.NEUTRALIZE_VOTE_THREAD,
       payload: { threadId: 1, userId: 'user123' },
     };
     const nextState = threadsReducer(initialState, action);
-    const updatedThread = nextState.find(thread => thread.id === 1);
+    const updatedThread = nextState.find((thread) => thread.id === 1);
     expect(updatedThread.upVotesBy).not.toContain('user123');
     expect(updatedThread.downVotesBy).not.toContain('user123');
   });
-
 });
