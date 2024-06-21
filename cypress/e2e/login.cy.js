@@ -10,7 +10,7 @@
 describe('Login specification', () => {
   // Ensure there is no duplication of cy.visit code by using beforeEach
   beforeEach(() => {
-    cy.visit('http://localhost:5175/');
+    cy.visit('http://localhost:5173/');
   });
 
   it('should display the login page correctly', () => {
