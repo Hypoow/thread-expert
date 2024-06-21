@@ -11,12 +11,12 @@
     "lint:fix": "eslint ./src --ext js,jsx --fix --report-unused-disable-directives --max-warnings 0",
     "test": "vitest --no-watch",
     "start": "vite",
-    "cy:run": "start-server-and-test start http://localhost:5173 cy:run-only",
+    "cy:run": "start-server-and-test start http://localhost:5175 cy:run-only",
     "cy:run-only": "cypress run",
-    "cy:open": "start-server-and-test start http://localhost:5173 cy:open-only",
+    "cy:open": "start-server-and-test start http://localhost:5175 cy:open-only",
     "cy:open-only": "cypress open",
     "e2e": "cypress open",
-    "ci:test": "vitest --no-watch && start-server-and-test dev http-get://localhost:5173 e2e"
+    "ci:test": "vitest --no-watch && start-server-and-test dev http-get://localhost:5175 e2e"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
