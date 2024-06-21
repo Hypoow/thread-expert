@@ -1,0 +1,318 @@
+:root {
+  --primary: #6a5acd;
+  --primary-variant: #483d8b;
+  --secondary: #ffffff;
+  --background: #1e1e2f;
+  --surface: #2e2e3f;
+  --error: #e57373;
+  --warning: #ffb74d;
+  --on-background: #e0e0e0;
+  --on-background-grey: #bdbdbd;
+  --on-surface: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--on-background);
+  line-height: 1.6;
+}
+
+.app-container {
+  background-color: var(--background);
+  color: var(--on-background);
+  min-height: 100vh;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 2px solid var(--on-background-grey);
+  background: linear-gradient(90deg, var(--primary), var(--primary-variant));
+  color: var(--on-surface);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+main {
+  margin: 20px auto;
+  padding: 40px;
+  background-color: var(--surface);
+  width: 85%;
+  max-width: 1200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--on-surface);
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1.2rem;
+  z-index: 1000;
+}
+
+.error-page {
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--error);
+  color: var(--on-surface);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: linear-gradient(120deg, var(--surface), #444);
+  transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(120deg, var(--primary-variant), var(--surface));
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.leaderboards-page__header_container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.leaderboards-item__container {
+  padding-top: 1.2em;
+}
+
+.leaderboard_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2em;
+  padding: 0.5em 0;
+}
+
+.leaderboard_item-avatar {
+  flex-shrink: 0;
+}
+
+.leaderboard_item-name {
+  flex-grow: 1;
+}
+
+.leaderboard_item-score {
+  flex-shrink: 0;
+}
+
+.form-page {
+  margin: 40px auto;
+  padding: 40px;
+  background-color: var(--surface);
+  width: 85%;
+  max-width: 1200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.input-login,
+.input-register,
+.input-thread {
+  margin: 40px 0;
+}
+
+.input-login label,
+.input-register label,
+.input-thread label {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.input-login input,
+.input-register input,
+.input-thread input,
+.input-thread textarea {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--background);
+  border-radius: 8px;
+  border: 2px solid var(--on-background-grey);
+  color: var(--on-surface);
+}
+
+.input-login button,
+.input-register button,
+.input-thread button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-variant));
+  color: var(--surface);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.input-login button:hover,
+.input-register button:hover,
+.input-thread button:hover {
+  background: linear-gradient(90deg, var(--primary-variant), var(--primary));
+}
+
+.button-category {
+  display: flex;
+  gap: 0.5em;
+  padding: 1em 0;
+  flex-wrap: wrap; /* Menambahkan flex-wrap untuk mencegah elemen keluar dari container */
+}
+
+.button-category > button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.4em 1em;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--secondary), #ff4500);
+  color: var(--surface);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button-category > button:hover {
+  background: linear-gradient(90deg, #ff4500, var(--secondary));
+}
+
+.threads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.thread-item__category {
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--secondary), #ff4500);
+  color: var(--surface);
+}
+
+.thread-item__user-name {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.comment_form-text-area {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--on-background-grey);
+}
+
+.comment_form-submit {
+  width: 100%;
+  padding: 0.8em;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-variant));
+  color: var(--surface);
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.comment_form-submit:hover {
+  background: linear-gradient(90deg, var(--primary-variant), var(--primary));
+}
+
+.comments-list {
+  padding: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: var(--surface);
+  border-radius: 8px;
+}
+
+.comment-item_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.comment-item_profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.comment-item_created {
+  font-size: 0.8em;
+  color: var(--on-background-grey);
+}
+
+/* Media Queries untuk Layar Kecil */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  main {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .form-page, .app-container {
+    padding: 10px;
+  }
+
+  .button-category {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .leaderboards-page__header_container, .leaderboard_item, .comment-item_container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .leaderboard_item {
+    gap: 0.5em;
+  }
+}

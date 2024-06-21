@@ -1,0 +1,93 @@
+.nav-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  flex-wrap: wrap; 
+}
+
+.nav-logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #483d8b;
+  margin-right: auto; 
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  margin-left: auto; 
+}
+
+.nav-card-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-card-item {
+  margin-left: 20px;
+}
+
+.nav-card-item a, .nav-card-item button {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+}
+
+.nav-card-greeting {
+  margin-left: 20px;
+  margin-right: 20px; 
+  font-size: 1.2em;
+  color: #555;
+}
+
+.button-logout {
+  color: #ff4d4d;
+  border-color: #ff4d4d;
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+  .nav-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .nav-logo {
+    margin-bottom: 20px;
+  }
+
+  .nav-center {
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+
+  .nav-card-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-card-item {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}
