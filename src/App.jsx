@@ -34,39 +34,34 @@ function App() {
     navigate('/');
   };
 
-  if (isPreload) {
-    return <Loading />;
-  }
-
-  if (authUser === null) {
-    return (
-      <div className="app-container">
-        <header>
-          <h1>Threadify</h1>
-        </header>
-        <main>
-          <Routes>
-            <Route path="/*" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-          </Routes>
-        </main>
-      </div>
-    );
-  }
-
   return (
     <div className="app-container">
       <header>
+        <h1>Threadify</h1>
         <Navigation authUser={authUser} logout={onLogout} />
+        <Loading />
       </header>
       <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<NotFoundPage />} />
-          <Route path="/leaderboard" element={<LeaderboardsPage />} />
-          <Route path="/threads/:id" element={<DetailThreadPage />} />
-          <Route path="/add-thread" element={<ThreadInput addThread={onAddThread} />} />
-        </Routes>
+        {isPreload ? (
+          <Loading />
+        ) : (
+          <Routes>
+            {authUser === null ? (
+              <>
+                <Route path="/*" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+              </>
+            ) : (
+              <>
+                <Route path="/" element={<HomePage />} />
+                <Route path="*" element={<NotFoundPage />} />
+                <Route path="/leaderboard" element={<LeaderboardsPage />} />
+                <Route path="/threads/:id" element={<DetailThreadPage />} />
+                <Route path="/add-thread" element={<ThreadInput addThread={onAddThread} />} />
+              </>
+            )}
+          </Routes>
+        )}
       </main>
     </div>
   );
